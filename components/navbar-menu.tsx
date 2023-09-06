@@ -47,6 +47,22 @@ const dynamicRoutes: dynamicRoutesProps[] = [
       },
     ],
   },
+  {
+    title: 'Setup',
+    menu: [
+      {
+        title: 'Setup',
+        description:
+          'Os principais equipamentos que utilizo em meu setup e recomendo.',
+        href: '/setup',
+      },
+      {
+        title: 'Stack',
+        description: 'Apps e serviços que uso para construir coisas legais.',
+        href: '/stack',
+      },
+    ],
+  },
 ]
 
 const staticRoutes: staticRoutesProps[] = [
@@ -69,7 +85,7 @@ const NavBarMenu = () => {
 
   return (
     <NavigationMenu className="dark">
-      <NavigationMenuList className="mr-44">
+      <NavigationMenuList>
         {dynamicRoutes.map((route, index) => (
           <NavigationMenuItem key={index}>
             <NavigationMenuTrigger className="font-semibold">
