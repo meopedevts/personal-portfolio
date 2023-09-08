@@ -50,7 +50,7 @@ const Footer = () => {
             <Button
               key={index}
               size={'icon'}
-              className="border border-zinc-800 bg-zinc-950 text-muted-foreground hover:bg-zinc-800"
+              className="flex items-center justify-center border border-zinc-800 bg-zinc-950 text-muted-foreground hover:bg-zinc-800"
             >
               <Link href={media.href} target="_blank">
                 <media.icon />
