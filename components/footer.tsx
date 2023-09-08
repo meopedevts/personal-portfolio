@@ -1,13 +1,14 @@
 import { Github, Linkedin, LucideIcon, Send } from 'lucide-react'
-import { Button } from './ui/button'
+import { Button } from '@/components/ui/button'
 import {
   Card,
   CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
-} from './ui/card'
+} from '@/components/ui/card'
 import Link from 'next/link'
+import TallyForm from '@/components/tally-form'
 
 interface socialMediaProps {
   icon: LucideIcon
@@ -38,7 +39,7 @@ const Footer = () => {
         </CardDescription>
         <CardContent className="px-4">
           <Button className="flex items-center justify-center gap-1 rounded-3xl px-5">
-            <span className="text-base font-medium">Fale comigo</span>
+            <TallyForm />
             <Send />
           </Button>
         </CardContent>
