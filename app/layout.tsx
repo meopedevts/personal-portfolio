@@ -11,8 +11,8 @@ const manrope = Manrope({
 })
 
 export const metadata: Metadata = {
-  title: 'Meope Portfolio',
-  description: 'My portfolio 2.0 with Next.js',
+  title: 'meopedevts',
+  description: 'meopedevts portfolio with Nextjs',
 }
 
 export default function RootLayout({
