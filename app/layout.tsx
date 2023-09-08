@@ -19,12 +19,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn('bg-zinc-950 text-zinc-50', inter.className)}>
-        <main>
-          <header className="flex items-center justify-center">
-            <Navbar />
-          </header>
-          {children}
-        </main>
+        <Navbar />
+        {children}
       </body>
     </html>
   )
