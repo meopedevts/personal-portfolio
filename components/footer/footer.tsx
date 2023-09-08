@@ -8,7 +8,7 @@ import {
   CardHeader,
 } from '@/components/ui/card'
 import Link from 'next/link'
-import TallyForm from '@/components/tally-form'
+import TallyForm from '@/components/footer/tally-form'
 
 interface socialMediaProps {
   icon: LucideIcon

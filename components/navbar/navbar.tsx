@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import NavBarMenu from '@/components/navbar-menu'
+import NavBarMenu from '@/components/navbar/navbar-menu'
 import { Glasses } from 'lucide-react'
 
 const Navbar = () => {

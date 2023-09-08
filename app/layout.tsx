@@ -1,5 +1,5 @@
-import Footer from '@/components/footer'
-import Navbar from '@/components/navbar'
+import Footer from '@/components/footer/footer'
+import Navbar from '@/components/navbar/navbar'
 import { cn } from '@/lib/utils'
 import '@/styles/globals.css'
 import type { Metadata } from 'next'
