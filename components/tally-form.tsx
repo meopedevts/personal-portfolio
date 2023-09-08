@@ -1,6 +1,18 @@
-import { ReactNode } from 'react'
+'use client'
+
+import { ReactNode, useEffect, useState } from 'react'
 
 const TallyForm = ({ children }: { children: ReactNode }) => {
+  const [hasMounted, setHasMounted] = useState(false)
+
+  useEffect(() => {
+    setHasMounted(true)
+  }, [])
+
+  if (!hasMounted) {
+    return null
+  }
+
   return (
     <>
       <script async src="https://tally.so/widgets/embed.js"></script>
