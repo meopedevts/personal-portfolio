@@ -1,4 +1,6 @@
-const TallyForm = () => {
+import { ReactNode } from 'react'
+
+const TallyForm = ({ children }: { children: ReactNode }) => {
   return (
     <>
       <script async src="https://tally.so/widgets/embed.js"></script>
@@ -9,9 +11,8 @@ const TallyForm = () => {
         data-tally-emoji-text="👋"
         data-tally-emoji-animation="wave"
         data-tally-auto-close="5000"
-        className="text-base font-medium"
       >
-        Fale comigo
+        {children}
       </button>
     </>
   )

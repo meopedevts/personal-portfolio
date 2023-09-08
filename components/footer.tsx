@@ -38,10 +38,12 @@ const Footer = () => {
           sinta-se à vontade para me enviar uma mensagem.
         </CardDescription>
         <CardContent className="px-4">
-          <Button className="flex items-center justify-center gap-1 rounded-3xl px-5">
-            <TallyForm />
-            <Send />
-          </Button>
+          <TallyForm>
+            <Button className="flex items-center justify-center gap-1 rounded-3xl px-5">
+              <span className="text-base font-medium">Fale comigo</span>
+              <Send />
+            </Button>
+          </TallyForm>
         </CardContent>
         <CardFooter className="flex items-center justify-center gap-2 border-t-[1px] border-t-zinc-800 p-4">
           {socialMedia.map((media, index) => (
