@@ -13,6 +13,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu'
+import { ChevronDown } from 'lucide-react'
 
 interface menuRoutesProps {
   title: string
@@ -80,7 +81,32 @@ const NavBarMenu = () => {
   }, [])
 
   if (!hasMounted) {
-    return null
+    return (
+      <main className="dark">
+        <ul className="group flex flex-1 list-none items-center justify-center space-x-1">
+          {dynamicRoutes.map((route, index) => (
+            <li key={index}>
+              <button className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-semibold transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
+                {route.title}{' '}
+                <ChevronDown
+                  className="relative top-[1px] ml-1 h-3 w-3 transition duration-200 group-data-[state=open]:rotate-180"
+                  aria-hidden="true"
+                />
+              </button>
+            </li>
+          ))}
+          {staticRoutes.map((route, index) => (
+            <li key={index}>
+              <a href={route.href}>
+                <button className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-semibold transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
+                  {route.title}
+                </button>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </main>
+    )
   }
 
   return (

@@ -10,7 +10,7 @@ const TallyForm = ({ children }: { children: ReactNode }) => {
   }, [])
 
   if (!hasMounted) {
-    return null
+    return <>{children}</>
   }
 
   return (
