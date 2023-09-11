@@ -27,7 +27,7 @@ const MediaContact = () => {
         <Link
           key={index}
           href={media.href}
-          className="mx-8 flex items-center justify-between rounded-xl bg-zinc-100 px-4 py-4 font-semibold text-zinc-950 transition-all duration-300 ease-in-out hover:scale-105 hover:bg-zinc-200"
+          className="mx-auto flex items-center justify-between rounded-xl bg-zinc-100 px-4 py-4 font-semibold text-zinc-950 transition-all duration-300 ease-in-out hover:scale-105 hover:bg-zinc-200 md:mx-8"
         >
           {media.title}
           <media.icon />
