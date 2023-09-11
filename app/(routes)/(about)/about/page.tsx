@@ -39,7 +39,7 @@ export default function About() {
             <p>
               Meu nome é Marcelo, mais conhecido como{' '}
               <i className="text-zinc-100">Meope</i> e tenho{' '}
-              <span className="text-zinc-100">30</span> anos.
+              <span className="text-zinc-100">20</span> anos.
             </p>
             <p>
               Sou programador full-stack, apaixonado por tecnologia. Atualmente
