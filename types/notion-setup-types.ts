@@ -53,15 +53,6 @@ interface Buy {
   url?: string
 }
 
-interface Annotations2 {
-  bold: boolean
-  italic: boolean
-  strikethrough: boolean
-  underline: boolean
-  code: boolean
-  color: string
-}
-
 interface Text2 {
   content: string
   link: string
@@ -70,7 +61,7 @@ interface Text2 {
 interface Title2 {
   type: string
   text: Text2
-  annotations: Annotations2
+  annotations: Annotations
   plain_text: string
   href: string
 }
@@ -130,7 +121,6 @@ export type {
   Group,
   Image,
   Buy,
-  Annotations2,
   Text2,
   Title,
   Result,
