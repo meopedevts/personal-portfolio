@@ -53,14 +53,9 @@ interface Buy {
   url?: string
 }
 
-interface Text2 {
-  content: string
-  link: string
-}
-
 interface Title2 {
   type: string
-  text: Text2
+  text: Text
   annotations: Annotations
   plain_text: string
   href: string
@@ -121,7 +116,6 @@ export type {
   Group,
   Image,
   Buy,
-  Text2,
   Title,
   Result,
   NotionSetupResponse,
