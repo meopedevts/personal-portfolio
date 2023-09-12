@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 const SetupCard = ({ title, group, image, buy }: GetSetupType) => {
   return (
-    <Link href={buy !== undefined ? buy : '/setup'}>
+    <Link href={buy !== undefined ? buy : '/setup'} target="_blank">
       <Card className="dark mx-auto h-[320px] w-[232px] overflow-hidden transition-all duration-300 ease-in-out hover:scale-105">
         <CardHeader className="flex min-h-[198px] items-center justify-center">
           {image !== undefined ? (
@@ -29,11 +29,11 @@ const SetupCard = ({ title, group, image, buy }: GetSetupType) => {
             />
           )}
         </CardHeader>
-        <CardContent className="flex h-16 items-center justify-center text-sm font-bold">
+        <CardContent className="flex h-16 items-center justify-center text-center text-sm font-bold">
           {title}
         </CardContent>
         <CardFooter className="mx-auto my-auto flex items-center justify-center">
-          <div className="flex w-20 items-center justify-center rounded-xl bg-zinc-900 px-2 py-2 text-sm">
+          <div className="flex w-20 items-center justify-center rounded-lg border border-zinc-800 px-2 py-2 text-xs font-semibold">
             {group}
           </div>
         </CardFooter>
