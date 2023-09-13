@@ -1,6 +1,9 @@
 'use server'
 
-import { NotionSetupResponse } from '@/types/notion-setup-types'
+import {
+  NotionSetupResponse,
+  NotionStackResponse,
+} from '@/types/notion-setup-types'
 import { Client } from '@notionhq/client'
 
 const notion = new Client({ auth: process.env.NOTION_API_KEY })
@@ -23,4 +26,22 @@ const getSetup = async () => {
   })
 }
 
-export { getSetup }
+const getStack = async () => {
+  const databaseId = '3c33367f04d140e0a7f6ace50dfa38f5'
+  const response = await notion.databases.query({
+    database_id: databaseId,
+  })
+
+  const typedResponse = response as unknown as NotionStackResponse
+
+  return typedResponse.results.map((stack) => {
+    return {
+      title: stack.properties.title.title[0].plain_text,
+      group: stack.properties.group.rich_text[0].plain_text,
+      image: stack.properties.image.url,
+      site: stack.properties.site.url,
+    }
+  })
+}
+
+export { getSetup, getStack }

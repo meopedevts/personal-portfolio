@@ -1,12 +1,12 @@
-import { GetSetupType } from '@/types/notion-setup-types'
+import { GetStackType } from '@/types/notion-setup-types'
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 import NotFound from '@/public/img/notfound.svg'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const SetupCard = ({ title, group, image, buy }: GetSetupType) => {
+const StackCard = ({ title, group, image, site }: GetStackType) => {
   return (
-    <Link href={buy !== undefined ? buy : '/setup'} target="_blank">
+    <Link href={site !== undefined ? site : '/stack'} target="_blank">
       <Card className="dark mx-auto h-[320px] w-[232px] overflow-hidden transition-all duration-300 ease-in-out hover:scale-105">
         <CardHeader className="flex min-h-[198px] items-center justify-center">
           {image !== undefined ? (
@@ -42,4 +42,4 @@ const SetupCard = ({ title, group, image, buy }: GetSetupType) => {
   )
 }
 
-export default SetupCard
+export default StackCard

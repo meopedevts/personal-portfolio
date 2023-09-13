@@ -1,18 +1,18 @@
 'use client'
 
-import { getSetup } from '@/services/notion'
-import { GetSetupType } from '@/types/notion-setup-types'
-import SetupCard from '@/components/setup-stack/setup/setup-card'
+import { getStack } from '@/services/notion'
+import { GetStackType } from '@/types/notion-setup-types'
+import StackCard from '@/components/setup-stack/stack/stack-card'
 import { useEffect, useState } from 'react'
-import SetupSkeleton from '@/components/setup-stack/setup-stack-skeleton'
+import SetupStackSkeleton from '@/components/setup-stack/setup-stack-skeleton'
 
-const SetupList = () => {
-  const [setupData, setsetupData] = useState<GetSetupType[]>([])
+const StackList = () => {
+  const [setupData, setsetupData] = useState<GetStackType[]>([])
 
   const [requestDone, setrequestDone] = useState(false)
 
   const requestSetup = async () => {
-    const response = await getSetup()
+    const response = await getStack()
     setsetupData(response)
     setrequestDone(true)
   }
@@ -26,7 +26,7 @@ const SetupList = () => {
   if (!requestDone) {
     return (
       <>
-        <SetupSkeleton route="setup" />
+        <SetupStackSkeleton route="stack" />
       </>
     )
   }
@@ -41,12 +41,12 @@ const SetupList = () => {
       </div>
       <div className="mx-auto flex max-w-5xl flex-col items-center justify-center gap-6 py-6 md:flex-row md:flex-wrap">
         {setupData.map((setup, index) => (
-          <SetupCard
+          <StackCard
             key={index}
             title={setup.title}
             group={setup.group}
             image={setup.image}
-            buy={setup.buy}
+            site={setup.site}
           />
         ))}
       </div>
@@ -54,4 +54,4 @@ const SetupList = () => {
   )
 }
 
-export default SetupList
+export default StackList

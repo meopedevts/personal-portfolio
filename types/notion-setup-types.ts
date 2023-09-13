@@ -53,6 +53,12 @@ interface Buy {
   url?: string
 }
 
+interface Site {
+  id: string
+  type: string
+  url?: string
+}
+
 interface Title2 {
   type: string
   text: Text
@@ -67,14 +73,21 @@ interface Title {
   title: Title2[]
 }
 
-interface Properties {
+interface PropertiesSetup {
   group: Group
   image: Image
   buy: Buy
   title: Title
 }
 
-interface Result {
+interface PropertiesStack {
+  group: Group
+  image: Image
+  site: Site
+  title: Title
+}
+
+interface ResultSetup {
   object: string
   id: string
   created_time: string
@@ -85,14 +98,39 @@ interface Result {
   icon: string
   parent: Parent
   archived: boolean
-  properties: Properties
+  properties: PropertiesSetup
+  url: string
+  public_url: string
+}
+
+interface ResultStack {
+  object: string
+  id: string
+  created_time: string
+  last_edited_time: string
+  created_by: CreatedBy
+  last_edited_by: LastEditedBy
+  cover: string
+  icon: string
+  parent: Parent
+  archived: boolean
+  properties: PropertiesStack
   url: string
   public_url: string
 }
 
 interface NotionSetupResponse {
   object: string
-  results: Result[]
+  results: ResultSetup[]
+  next_cursor: string
+  has_more: boolean
+  type: string
+  // page_or_database: PageOrDatabase
+}
+
+interface NotionStackResponse {
+  object: string
+  results: ResultStack[]
   next_cursor: string
   has_more: boolean
   type: string
@@ -106,18 +144,16 @@ interface GetSetupType {
   buy: string | undefined
 }
 
+interface GetStackType {
+  title: string
+  group: string
+  image: string | undefined
+  site: string | undefined
+}
+
 export type {
-  CreatedBy,
-  LastEditedBy,
-  Parent,
-  Text,
-  Annotations,
-  RichText,
-  Group,
-  Image,
-  Buy,
-  Title,
-  Result,
   NotionSetupResponse,
+  NotionStackResponse,
   GetSetupType,
+  GetStackType,
 }

@@ -1,21 +1,13 @@
-import Image from 'next/image'
-import working from '@/public/img/working.svg'
+import SetupStackHeader from '@/components/setup-stack/setup-stack-header'
+import StackList from '@/components/setup-stack/stack/stack-list'
 
 export default function Stack() {
   return (
     <main className="mx-auto flex max-w-5xl flex-col items-center justify-center overflow-hidden px-5 py-8 xl:px-0">
-      <div className="mx-auto flex max-w-5xl flex-col items-center justify-center gap-4 overflow-hidden py-8 xl:px-0">
-        <Image src={working} alt="working" className="h-40 w-40" />
-        <div className="mx-auto flex max-w-5xl flex-col items-center justify-center gap-1">
-          <h1 className="text-xl md:text-2xl">
-            Hey, está pagina ainda está em construção!
-          </h1>
-          <h2 className="text-sm text-muted-foreground md:text-base">
-            Estou trabalhando para trazer a melhor experiência possível para
-            você, espero vê-lo em breve.
-          </h2>
-        </div>
-      </div>
+      <section className="mx-auto flex max-w-5xl flex-col items-center justify-center gap-4 overflow-hidden xl:px-0">
+        <SetupStackHeader title="Stack" />
+        <StackList />
+      </section>
     </main>
   )
 }
