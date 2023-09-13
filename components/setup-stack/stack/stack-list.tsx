@@ -33,13 +33,7 @@ const StackList = () => {
 
   return (
     <div className="mx-auto flex w-full max-w-5xl flex-col gap-4 py-6">
-      <div className="flex max-w-5xl flex-col gap-4">
-        <h1 className="text-3xl font-bold">Equipamentos</h1>
-        <h2 className="text-zinc-400">
-          Lista de equipamentos que uso diariamente
-        </h2>
-      </div>
-      <div className="mx-auto flex max-w-5xl flex-col items-center justify-center gap-6 py-6 md:flex-row md:flex-wrap">
+      <div className="mx-auto flex max-w-5xl flex-col items-center justify-center gap-6 py-6 md:mx-3 md:flex-row md:flex-wrap md:justify-start">
         {setupData.map((setup, index) => (
           <StackCard
             key={index}
