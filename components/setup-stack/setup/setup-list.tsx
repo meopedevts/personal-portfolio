@@ -39,7 +39,7 @@ const SetupList = () => {
           Lista de equipamentos que uso diariamente
         </h2>
       </div>
-      <div className="mx-auto flex max-w-5xl flex-col items-center justify-center gap-6 py-6 md:flex-row md:flex-wrap md:justify-start">
+      <div className="mx-auto flex max-w-5xl flex-col items-center justify-center gap-6 py-6 md:flex-row md:flex-wrap">
         {setupData.map((setup, index) => (
           <SetupCard
             key={index}
