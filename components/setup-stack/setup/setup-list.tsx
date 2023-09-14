@@ -4,7 +4,7 @@ import { getSetup } from '@/services/notion'
 import { GetSetupType } from '@/types/notion-setup-types'
 import SetupCard from '@/components/setup-stack/setup/setup-card'
 import { useEffect, useState } from 'react'
-import SetupSkeleton from '@/components/setup-stack/setup-stack-skeleton'
+import SetupSkeleton from '@/components/setup-stack/setup/setup-skeleton'
 
 const SetupList = () => {
   const [setupData, setsetupData] = useState<GetSetupType[]>([])
@@ -26,7 +26,7 @@ const SetupList = () => {
   if (!requestDone) {
     return (
       <>
-        <SetupSkeleton route="setup" />
+        <SetupSkeleton />
       </>
     )
   }
@@ -39,7 +39,8 @@ const SetupList = () => {
           Lista de equipamentos que uso diariamente
         </h2>
       </div>
-      <div className="mx-auto flex max-w-5xl flex-col items-center justify-center gap-6 py-6 md:mx-3 md:flex-row md:flex-wrap md:justify-start">
+      {/* <div className="mx-auto flex max-w-5xl flex-col items-center justify-center gap-6 py-6 md:mx-3 md:flex-row md:flex-wrap md:justify-start"> */}
+      <div className="mx-2 flex max-w-5xl flex-wrap items-center justify-between gap-5 py-6 md:mx-3 md:justify-start">
         {setupData.map((setup, index) => (
           <SetupCard
             key={index}

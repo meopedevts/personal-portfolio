@@ -4,7 +4,7 @@ import { getStack } from '@/services/notion'
 import { GetStackType } from '@/types/notion-setup-types'
 import StackCard from '@/components/setup-stack/stack/stack-card'
 import { useEffect, useState } from 'react'
-import SetupStackSkeleton from '@/components/setup-stack/setup-stack-skeleton'
+import StackSkeleton from '@/components/setup-stack/stack/stack-skeleton'
 
 const StackList = () => {
   const [setupData, setsetupData] = useState<GetStackType[]>([])
@@ -26,14 +26,14 @@ const StackList = () => {
   if (!requestDone) {
     return (
       <>
-        <SetupStackSkeleton route="stack" />
+        <StackSkeleton />
       </>
     )
   }
 
   return (
     <div className="mx-auto flex w-full max-w-5xl flex-col gap-4 py-6">
-      <div className="mx-auto flex max-w-5xl flex-col items-center justify-center gap-6 py-6 md:mx-3 md:flex-row md:flex-wrap md:justify-start">
+      <div className="mx-2 flex max-w-5xl flex-wrap items-center justify-between gap-6 py-6 md:mx-3 md:justify-start">
         {setupData.map((setup, index) => (
           <StackCard
             key={index}
