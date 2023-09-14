@@ -40,7 +40,7 @@ const SetupList = () => {
         </h2>
       </div>
       {/* <div className="mx-auto flex max-w-5xl flex-col items-center justify-center gap-6 py-6 md:mx-3 md:flex-row md:flex-wrap md:justify-start"> */}
-      <div className="mx-2 flex max-w-5xl flex-wrap items-center justify-between gap-5 py-6 md:mx-3 md:justify-start">
+      <div className="mx-1 flex max-w-5xl flex-wrap items-center justify-between gap-5 py-6 md:mx-3 md:justify-start">
         {setupData.map((setup, index) => (
           <SetupCard
             key={index}

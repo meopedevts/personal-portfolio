@@ -7,7 +7,7 @@ import Link from 'next/link'
 const StackCard = ({ title, group, image, site }: GetStackType) => {
   return (
     <Link href={site !== undefined ? site : '/setup'} target="_blank">
-      <Card className="dark mx-auto h-[260px] w-[154px] overflow-hidden transition-all duration-300 ease-in-out hover:scale-105 md:w-[232px]">
+      <Card className="dark mx-auto h-[260px] w-[150px] overflow-hidden transition-all duration-300 ease-in-out hover:scale-105 md:w-[232px]">
         <CardHeader className="flex min-h-[144px] items-center justify-center">
           {image !== undefined ? (
             <Image

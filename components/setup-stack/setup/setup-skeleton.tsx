@@ -8,11 +8,11 @@ const SetupSkeleton = () => {
         <Skeleton className="dark h-12 w-72" />
         <Skeleton className="dark h-4 w-80" />
       </div>
-      <div className="mx-2 flex max-w-5xl flex-wrap items-center justify-between gap-5 py-6 md:mx-3 md:justify-start">
-        <Skeleton className="dark h-[260px] w-[154px] md:h-[320px] md:w-[232px]" />
-        <Skeleton className="dark h-[260px] w-[154px] md:h-[320px] md:w-[232px]" />
-        <Skeleton className="dark h-[260px] w-[154px] md:h-[320px] md:w-[232px]" />
-        <Skeleton className="dark h-[260px] w-[154px] md:h-[320px] md:w-[232px]" />
+      <div className="mx-1 flex max-w-5xl flex-wrap items-center justify-between gap-5 py-6 md:mx-3 md:justify-start">
+        <Skeleton className="dark h-[280px] w-[150px] md:h-[320px] md:w-[232px]" />
+        <Skeleton className="dark h-[280px] w-[150px] md:h-[320px] md:w-[232px]" />
+        <Skeleton className="dark h-[280px] w-[150px] md:h-[320px] md:w-[232px]" />
+        <Skeleton className="dark h-[280px] w-[150px] md:h-[320px] md:w-[232px]" />
       </div>
     </div>
   )

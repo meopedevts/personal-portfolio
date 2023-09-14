@@ -8,7 +8,7 @@ const SetupCard = ({ title, group, image, buy }: GetSetupType) => {
   return (
     <Link href={buy !== undefined ? buy : '/setup'} target="_blank">
       {/* <Card className="dark mx-auto h-[320px] w-[232px] overflow-hidden transition-all duration-300 ease-in-out hover:scale-105"> */}
-      <Card className="dark mx-auto h-[260px] w-[154px] overflow-hidden transition-all duration-300 ease-in-out hover:scale-105 md:h-[320px] md:w-[232px]">
+      <Card className="dark mx-auto h-[280px] w-[150px] overflow-hidden transition-all duration-300 ease-in-out hover:scale-105 md:h-[320px] md:w-[232px]">
         <CardHeader className="flex min-h-[144px] items-center justify-center md:min-h-[198px]">
           {image !== undefined ? (
             <Image
@@ -30,10 +30,10 @@ const SetupCard = ({ title, group, image, buy }: GetSetupType) => {
             />
           )}
         </CardHeader>
-        <CardContent className="flex h-16 items-center justify-center text-center font-bold">
+        <CardContent className="flex h-20 items-center justify-center text-center font-bold md:h-16">
           {title}
         </CardContent>
-        <CardFooter className="mx-auto my-auto flex items-center justify-center">
+        <CardFooter className="mx-auto my-auto flex items-center justify-center py-2">
           <div className="flex w-auto items-center justify-center rounded-lg border border-zinc-800 px-4 py-2 text-xs font-semibold capitalize">
             {group}
           </div>
