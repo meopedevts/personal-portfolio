@@ -130,7 +130,7 @@ const NavBarMenu = () => {
         ))}
         {staticRoutes.map((route, index) => (
           <NavigationMenu key={index}>
-            <Link href={route.href}>
+            <Link href={route.href} legacyBehavior passHref>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                 {route.title}
               </NavigationMenuLink>

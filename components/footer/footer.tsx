@@ -11,16 +11,19 @@ import Link from 'next/link'
 import TallyForm from '@/components/footer/tally-form'
 
 interface socialMediaProps {
+  name: string
   icon: LucideIcon
   href: string
 }
 
 const socialMedia: socialMediaProps[] = [
   {
+    name: 'github',
     icon: Github,
     href: 'https://github.com/meopedevts',
   },
   {
+    name: 'linkedin',
     icon: Linkedin,
     href: 'https://www.linkedin.com/in/meopedevts/',
   },
@@ -48,11 +51,16 @@ const Footer = () => {
         <CardFooter className="flex items-center justify-center gap-2 border-t-[1px] border-t-zinc-800 p-4">
           {socialMedia.map((media, index) => (
             <Button
+              title={media.name}
               key={index}
               size={'icon'}
               className="flex items-center justify-center border border-zinc-800 bg-zinc-950 text-muted-foreground hover:bg-zinc-800"
             >
-              <Link href={media.href} target="_blank">
+              <Link
+                href={media.href}
+                target="_blank"
+                aria-label={'Acesse meu ' + media.name}
+              >
                 <media.icon />
               </Link>
             </Button>
