@@ -22,7 +22,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={cn('bg-zinc-950 text-zinc-50', manrope.className)}>
+      <body
+        className={cn(
+          'scrollbar-track-zinc-950 scrollbar-thumb-zinc-50 scrollbar-thin scrollbar-thumb-rounded bg-zinc-950 text-zinc-50',
+          manrope.className,
+        )}
+      >
         <Navbar />
         {children}
         <Footer />
