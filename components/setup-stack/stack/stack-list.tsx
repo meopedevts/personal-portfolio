@@ -47,7 +47,7 @@ const StackList = () => {
       <div className="mx-1 flex max-w-5xl md:mx-3">
         <Input
           placeholder="Pesquise o item desejado"
-          className="dark"
+          className="dark transition-colors duration-300 ease-in-out focus-visible:border-zinc-100 focus-visible:ring-0 focus-visible:ring-offset-0"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />

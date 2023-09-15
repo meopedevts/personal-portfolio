@@ -53,7 +53,7 @@ const SetupList = () => {
       <div className="flex max-w-5xl">
         <Input
           placeholder="Pesquise o item desejado"
-          className="dark"
+          className="dark transition-colors duration-300 ease-in-out focus-visible:border-zinc-100 focus-visible:ring-0 focus-visible:ring-offset-0"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
