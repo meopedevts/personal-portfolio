@@ -3,7 +3,7 @@ import working from '@/public/img/working.svg'
 import Link from 'next/link'
 import CarrerCard from '@/components/about/carrer-card'
 import { CarrerProps } from '@/types'
-import moment from 'moment'
+import moment, { Moment } from 'moment'
 
 const carrer: CarrerProps[] = [
   {
@@ -20,6 +20,10 @@ const carrer: CarrerProps[] = [
     },
   },
 ]
+
+const birth: Moment = moment('2002-12-11', 'YYYY-MM-DD')
+const sysdate: Moment = moment()
+const age: number = sysdate.diff(birth, 'years')
 
 export default function About() {
   return (
@@ -39,7 +43,7 @@ export default function About() {
             <p>
               Meu nome é Marcelo, mais conhecido como{' '}
               <i className="text-zinc-100">Meope</i> e tenho{' '}
-              <span className="text-zinc-100">20</span> anos.
+              <span className="text-zinc-100">{age}</span> anos.
             </p>
             <p>
               Sou programador full-stack, apaixonado por tecnologia. Atualmente
