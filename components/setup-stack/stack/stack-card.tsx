@@ -33,7 +33,7 @@ const StackCard = ({ title, group, image, site }: GetStackType) => {
           {title}
         </CardContent>
         <CardFooter className="mx-auto my-auto flex items-center justify-center">
-          <div className="flex w-auto items-center justify-center rounded-lg border border-zinc-800 px-4 py-2 text-xs font-semibold capitalize">
+          <div className="flex w-auto items-center justify-center truncate rounded-lg border border-zinc-800 px-4 py-2 text-xs font-semibold capitalize">
             {group}
           </div>
         </CardFooter>
