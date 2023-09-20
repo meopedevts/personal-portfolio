@@ -1,7 +1,9 @@
 import Footer from '@/components/footer/footer'
 import Navbar from '@/components/navbar/navbar'
 import { cn } from '@/lib/utils'
+import queryClient from '@/services/queryClient'
 import '@/styles/globals.css'
+import { QueryClientProvider } from '@tanstack/react-query'
 import type { Metadata } from 'next'
 import { Manrope } from 'next/font/google'
 
@@ -29,7 +31,9 @@ export default function RootLayout({
         )}
       >
         <Navbar />
-        {children}
+        <QueryClientProvider client={queryClient}>
+          {children}
+        </QueryClientProvider>
         <Footer />
       </body>
     </html>
