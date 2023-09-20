@@ -1,40 +1,37 @@
 'use client'
 
 import { getStack } from '@/services/notion'
-import { GetStackType } from '@/types/notion-setup-types'
 import StackCard from '@/components/setup-stack/stack/stack-card'
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 import StackSkeleton from '@/components/setup-stack/stack/stack-skeleton'
 import { Input } from '@/components/ui/input'
+import { useQuery } from '@tanstack/react-query'
 
 const StackList = () => {
-  const [stackData, setstackData] = useState<GetStackType[]>([])
+  const { data, isFetching } = useQuery(
+    ['stack'],
+    () => {
+      const response = getStack()
+
+      return response
+    },
+    {
+      staleTime: 1000 * 60 * 10,
+    },
+  )
+
   const [query, setQuery] = useState('')
 
-  const [requestDone, setrequestDone] = useState(false)
-
-  const requestSetup = async () => {
-    const response = await getStack()
-    setstackData(response)
-    setrequestDone(true)
-  }
-
   const filteredStack = useMemo(() => {
-    return stackData.filter((stack) => {
+    return data?.filter((stack) => {
       return (
         stack.title.toLowerCase().includes(query.toLowerCase()) ||
         stack.group.toLowerCase().includes(query.toLowerCase())
       )
     })
-  }, [stackData, query])
+  }, [data, query])
 
-  useEffect(() => {
-    if (!requestDone) {
-      requestSetup()
-    }
-  }, [requestDone])
-
-  if (!requestDone) {
+  if (isFetching) {
     return (
       <>
         <StackSkeleton />
@@ -53,7 +50,7 @@ const StackList = () => {
         />
       </div>
       <div className="mx-1 flex max-w-5xl flex-wrap items-center justify-between gap-6 py-6 md:mx-3 md:justify-start">
-        {filteredStack.map((stack, index) => (
+        {filteredStack?.map((stack, index) => (
           <StackCard
             key={index}
             title={stack.title}

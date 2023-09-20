@@ -1,40 +1,37 @@
 'use client'
 
 import { getSetup } from '@/services/notion'
-import { GetSetupType } from '@/types/notion-setup-types'
 import SetupCard from '@/components/setup-stack/setup/setup-card'
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 import SetupSkeleton from '@/components/setup-stack/setup/setup-skeleton'
 import { Input } from '@/components/ui/input'
+import { useQuery } from '@tanstack/react-query'
 
 const SetupList = () => {
-  const [setupData, setsetupData] = useState<GetSetupType[]>([])
+  const { data, isFetching } = useQuery(
+    ['setup'],
+    () => {
+      const response = getSetup()
+
+      return response
+    },
+    {
+      staleTime: 1000 * 60 * 10,
+    },
+  )
+
   const [query, setQuery] = useState('')
 
-  const [requestDone, setrequestDone] = useState(false)
-
-  const requestSetup = async () => {
-    const response = await getSetup()
-    setsetupData(response)
-    setrequestDone(true)
-  }
-
   const filteredSetup = useMemo(() => {
-    return setupData.filter((setup) => {
+    return data?.filter((setup) => {
       return (
         setup.title.toLowerCase().includes(query.toLowerCase()) ||
         setup.group.toLowerCase().includes(query.toLowerCase())
       )
     })
-  }, [setupData, query])
+  }, [data, query])
 
-  useEffect(() => {
-    if (!requestDone) {
-      requestSetup()
-    }
-  }, [requestDone])
-
-  if (!requestDone) {
+  if (isFetching) {
     return (
       <>
         <SetupSkeleton />
@@ -59,7 +56,7 @@ const SetupList = () => {
         />
       </div>
       <div className="mx-1 flex max-w-5xl flex-wrap items-center justify-between gap-5 py-6 md:mx-3 md:justify-start">
-        {filteredSetup.map((setup, index) => (
+        {filteredSetup?.map((setup, index) => (
           <SetupCard
             key={index}
             title={setup.title}
