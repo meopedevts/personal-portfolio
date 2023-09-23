@@ -1,3 +1,6 @@
+import Bullet from '@/components/bullet/bullet'
+import Marquee from '@/components/sign/sign'
+
 export default function Home() {
   return (
     <main className="mx-auto flex max-w-5xl flex-col justify-center overflow-hidden px-5 py-8 xl:px-0">
@@ -11,6 +14,16 @@ export default function Home() {
               Unindo design e código, sigo criando projetos únicos.
             </h2>
           </div>
+        </div>
+        <div className="flex flex-col gap-6 md:max-w-lg">
+          <Marquee className="flex justify-center text-center">
+            <h3 className="relative flex items-center pl-5 text-sm">
+              <span className="font-semibold">
+                Disponível para trabalhos freelance
+              </span>
+              <Bullet />
+            </h3>
+          </Marquee>
         </div>
       </section>
     </main>
