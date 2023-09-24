@@ -12,7 +12,7 @@ const Marquee = ({ children, className }: MaqueeProps) => {
   const marqueeRef = useRef<HTMLDivElement>(null)
 
   return (
-    <div className="w-full overflow-hidden rounded-2xl border border-zinc-100">
+    <div className="w-full overflow-hidden rounded-lg border border-transparent ">
       <div
         className={cn('nowrap animate-marquee duration-6000', className)}
         ref={marqueeRef}

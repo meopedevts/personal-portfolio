@@ -15,7 +15,7 @@ export default function Home() {
             </h2>
           </div>
         </div>
-        <div className="flex flex-col gap-6 md:max-w-lg">
+        <div className="flex flex-col gap-6 md:max-w-xs">
           <Marquee className="flex justify-center text-center">
             <h3 className="relative flex items-center pl-5 text-sm">
               <span className="font-semibold">
